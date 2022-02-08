@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内置对象string</title>
+		<script type="text/javascript">
+			//1.根据字符返回位置
+			var str = 'hi wo zhen,de haoxiang,ni'
+			console.log(str.indexOf('i')) // 1 返回字符在字符串中的位置
+			console.log(str.indexOf('i',2)) // 17 从2开始查找 返回字符在字符串中的位置
+			
+			// 2.找出所在字符串中的个数
+			var sum = 0;
+			for (var i = 0; i < str.length; i++) {
+				var index = str.indexOf('i',i);
+				if (index !== -1) {
+					sum +=1;
+					i = index;
+				}
+			}
+			console.log(sum)
+			
+			// 3.根据位置返回字符
+			// charAt(index) 返回字符
+			console.log(str.charAt(4)) // o
+			// 3.1 遍历字符串：
+			for (var i = 0; i < str.length; i++) {
+				console.log(str.charAt(i)) 
+			}
+			
+			// 4. charCodeAt(index) 返回字符的ASCII
+			console.log(str.charCodeAt(4))
+			
+			// 5. H5 新增 str[index]
+			console.log(str[4])
+			
+			// 6. 求出字符出现次数最多的次数
+			console.log(str);
+			var obj = {};
+			for ( var i = 0; i < str.length; i++) {
+				chars = str.charAt(i);
+				if (obj[chars]) {
+					obj[chars]++ ;
+				}else {
+					obj[chars] = 1;
+				}
+			}
+			console.log(obj)
+			maxNum = 0;
+			maxVal = '';
+			for (var k in obj) {
+				var val = obj[k];
+				if (val > maxNum) {
+					maxNum = val;
+					maxVal = k;
+				}
+			}
+			console.log('最大的数字是：' + maxNum , '\n最大数字对应的key是：' + maxVal)
+			
+			// 拼接 
+			//stringA.concat(stringB,stringC) 链接 两个或多个数组，生成 新数组C
+			var str1 = 'hhh';
+			var str2 = 'xxx';
+			var str3 = str.concat(str1,str2);
+			console.log(str3) ;
+			
+			
+			// stringA.slice(索引1,索引2)
+			//截取范围 [索引1,索引2) ,不包含 索引2
+			//返回被截取项目的新数组
+			// 不影响原字符串
+			str4 =  str3.slice(3,9) ;
+			console.log('索引位置3,9',str4);
+			
+			
+			// 14. 替换字符串 replace('i','9')
+			console.log(str);
+			console.log(str.replace('i',9)) //只能替换1个
+			//替换所有：
+			while (str.indexOf('i') !== -1) {
+				str = str.replace('i','9')
+			}
+			console.log(str)
+			
+			// 15. 字符串转换为数组  split('分隔符')
+			var str66 = str.split(',');
+			console.log(str66);
+			console.log(typeof str66);
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

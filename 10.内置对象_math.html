@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内置对象</title>
+		<script type="text/javascript">
+			//内置对象
+			//js内部自带的一些对象，提供一些常用的方法和功能；
+			//查看文档 MDN W3C
+			//https://developer.mozilla.org
+			console.log(Math.PI) //圆周率
+			console.log(Math.max(10, 2, 10.1, 25, 26.1)) //最大值
+			
+			//Math.min()  最小值
+			
+			//Math.abs()  绝对值
+			console.log(Math.abs(1)) //结果为1
+			console.log(Math.abs(-1)) //结果为1
+			console.log(Math.abs('1')) //结果为1
+			
+			//Math.floor() 向下取整
+			console.log(Math.floor(2.6)) //结果为2
+			
+			//Math.ceil() 向上取整
+			console.log(Math.ceil(2.6)) //结果为3
+			
+			// Math.round() 四舍五入
+			// 0.5为分界线
+			// 小数部分 < 0.5,舍入到相邻绝对值更小整数；
+			// 小数部分 > 0.5,舍入到相邻绝对值更大整数；
+			// 小数部分 = 0.5,舍入到相邻绝的 在正无穷 方向上的 整数；
+			console.log(Math.round(1.45))
+			console.log(Math.round(1.44))
+			console.log(Math.round(1.46))
+			console.log(Math.round(1.5))
+			console.log(Math.round(-1.4))
+			console.log(Math.round(-1.5))
+			console.log(Math.round(-1.6))
+			
+			// Math.random() 返回一个随机的小数,区间 [0,1)
+			console.log(Math.random())
+			
+			// 两个数之间的随机整数，并且包含两个整数
+			// Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+			// Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+			function getRandomIntInclusive (min, max) {
+				min = Math.ceil(min);
+				max = Math.floor(max);
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+			console.log(getRandomIntInclusive(1,10))
+			//猜数字游戏，10次机会
+			var  n = prompt('请输入猜数字游戏的机会数')
+			alert('开始猜数字游戏 \n 只有' + n + '次机会哦！'+'\n 点击【确定】开始游戏吧！')
+			var isgood = getRandomIntInclusive(1,10)
+			var i = 0;
+			while(i < n) {
+				var num = prompt('请输入1~10之间的数字')
+				i++;
+				if (num < isgood) {
+					alert('你猜小了！')
+				}else if (num > isgood) {
+					alert('你才大了！')
+				}else{
+					alert('恭喜你猜对了！结果为：' + isgood)
+					break;
+				}
+			}
+			alert('游戏结束')
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据类型</title>
+	</head>
+	<script >
+		//数据类型简介：简单数据类型、复杂数据类型；
+		//简单数据类型：number、string、boolean、undefined、null
+		//附加数据类型：object
+		var num = 10;
+		var pi = 3.14;
+		//八进制0~8 我们程序里面数字前面加0表示八进制
+		var num1 = 010;
+		console.log(num1); //结果为8
+		//16进制 0~9 a~f ,数字前面加0x为16进制
+		var num2 = 0x9;
+		var num3 = 0xa;
+		console.log(num2); //结果为9
+		console.log(num3); //结果为10
+		
+		//数字型的最大值
+		console.log(Number.MAX_VALUE);
+		//数字型的最小值
+		console.log(Number.MIN_VALUE);
+		//无穷大
+		console.log(Number.MAX_VALUE*2) ;//结果为infinty
+		//无穷小
+		console.log(-Number.MAX_VALUE*2); //结果为-infinty
+		//非数字
+		console.log('胡老师' - 100); //结果为nan
+		
+		//isNaN判断非数字，并且返回值，如果是数字返回false，否则是true
+		console.log(isNaN(12));	//结果为false
+		console.log(isNaN('胡老师')); //结果为true
+		
+		//字符串string,推荐使用单引号
+		//字符串嵌套，外单内双
+		console.log('我是"娃哈哈"的\n代言人')
+		//转义字符，转义字符都是\开头
+		//  \n换行  \\斜杠\  \'单引号  \"双引号  \t缩进  \b空格
+		console.log('我是"娃哈哈"的\n代言人')
+		
+		//字符串长度 length
+		var str = 'my name is andy';
+		console.log(str.length ); //结果为15
+		
+		//字符串的拼接 字符串 + 任何类型 = 字符串类型
+		console.log('沙漠'+'骆驼');
+		console.log('胡老师'+20); //胡老师20
+		//字符串拼接加强
+		console.log('胡老师' + 20 + '岁');
+		
+		//布尔型
+		var flag = true; //加法中当做1
+		var flag1 = false; //加法中当做0
+		console.log(flag + 1) //结果为2 
+		
+		//undefined
+		var variable = undefined;
+		console.log(variable + 'ok'); //结果为variableok
+		console.log(variable + 20); //结果为NaN
+		
+		//null
+		var space = null;
+		console.log(space + 'pink');//结果为nullpink
+		console.log(space + 1);//结果为1
+		
+		//获取数据类型 typeof
+		var num = 10;
+		console.log(typeof num);
+		console.log(num);
+		console.log(typeof space); //数据类型为object
+		//prompt 取值为字符串
+		
+		//字面量
+		
+		//转换为字符串类型String(num)、toString()
+		var num5 = 16;
+		console.log(String(num));
+		console.log(num1.toString());
+		console.log(num5);
+		console.log(num5 +'');
+		
+		//转为数字型parseInt('')、parseFloat('')、Number('')
+		var age6 = prompt('请输入你的年龄');
+		console.log(age6);
+		console.log(parseInt(age6)); //整型转换
+		console.log(parseInt('120PX')) ;//结果为120
+		console.log(parseInt('rem120PX')); //结果为NaN
+		console.log(parseInt('3.69'));	//结果为3
+		console.log(parseFloat('3.14')); //结果为3.14
+		console.log(Number('5.78')); //结果为5.78
+		// - * / 三种符号可以传成数值型
+		console.log('12' - 0);
+		console.log('123' - '120');
+		console.log('123' * '2');
+		console.log('123' / '3');
+		
+		//转换为布尔型Boolean()
+		console.log('空'+'-'+Boolean(''));
+		console.log('0'+'-'+Boolean(0));
+		console.log('NaN'+'-'+Boolean(NaN));
+		console.log('null'+'-'+Boolean(null));
+		console.log('undefined'+'-'+Boolean(undefined));
+		console.log('你好'+'-'+Boolean('你好'));
+		console.log('12'+'-4'+Boolean(12));
+		
+		
+		
+	</script>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>密码验证</title>
+		<style>
+			.box {
+				position: relative;
+				width: 400px;
+				border-bottom: 1px solid #ccc;
+				margin: 100px auto;
+			}
+			.box input {
+				width: 370px;
+				height: 30px;
+				border: 0;
+				outline: none;
+			}
+			.box img {
+				position: absolute;
+				width: 30px;
+				top: 2px;
+				right: 0px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="box">
+			<label>
+				<img src="https://drive.google.com/uc?export=view&id=1YANZYeM2X1M0pzELEYHVNeTn_aIBmN33" id='eye' >
+			</label>
+			<input type="password" name="" id="pwd" value="" />
+			
+			<script type="text/javascript">
+				//获取元素
+				var eye = document.getElementById('eye')
+				var pwd = document.getElementById('pwd')
+				
+				// 绑定时间 处理程序
+				var flag = 0
+				eye.onclick = function() {
+					if ( flag == 0) {
+						eye.src = 'https://drive.google.com/uc?export=view&id=14doVKGcw2ten2ludaiYLY0t77c1l-BjY';
+						pwd.type = 'text';
+						flag = 1;
+					}else {
+						eye.src = 'https://drive.google.com/uc?export=view&id=1YANZYeM2X1M0pzELEYHVNeTn_aIBmN33';
+						pwd.type = 'password';
+						flag = 0;
+					}	
+				}
+			</script>
+			
+		</div>
+		
+		
+	</body>
+</html>

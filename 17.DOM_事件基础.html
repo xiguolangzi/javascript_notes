@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM_事件基础</title>
+	</head>
+	<body>
+		<button type="button" id='btn' > 显示当前时间 </button>
+		<div>某个时间</div>
+		<p>
+			我是文字
+			<span>666</span>
+		</p>
+		<script type="text/javascript">
+			// 1.获取事件源：
+			var btn = document.getElementById('btn');
+			
+			// 2.注册事件 3.添加处理程序
+			btn.onclick = function() {
+				alert('点秋香')
+			}
+			
+			// 鼠标事件
+			// onclick 	点击触发
+			
+			// onfocus 	获得鼠标检点触发
+			// onblur		失去鼠标焦点触发
+			
+			// onmouseover	鼠标经过触发
+			// onmouseout	鼠标离开触发
+			
+			// onmousemove	鼠标移动触发
+			
+			// onmouseup	鼠标弹起触发
+			// onmousedown	鼠标按下触发
+			
+			// 3.操作元素
+			var btn = document.getElementById('btn');
+			var div = document.querySelector('div');
+			// btn.onclick = function() {
+			// 	div.innerText = '<strong>今天是:</strong>2019-6-6'
+			// }
+			
+			// 4. innerText 和 innerHTML 的区别
+			// innerHTML 识别标签 W3C标准
+			// innerText 不能识别标签
+			btn.onclick = function() {
+				div.innerHTML = '<strong>今天是:</strong>2019-6-6'
+				// 点击后按钮禁用
+				this.disabled = true;
+			}
+			// innerText 获取元素会去除换行和空格
+			var test = document.querySelector('p');
+			console.log('innerText的结果：',test.innerText);
+			console.log('innerHTML的结果：',test.innerHTML);
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组对象Array</title>
+		<script type="text/javascript">
+			// 1.创建数组
+			var arr = ['hah',66,2.6,99]; //
+			console.log(arr[1])
+			
+			// 2.创建数组 - 内置对象
+			var arr1 = new Array();  //创建空数组
+			var arr2 = new Array(5);  //创建数组长度，数组内容为空
+			var arr3 = new Array(1, 2, 3, 4, 5); //创建有数据的数组
+			console.log(arr1)
+			console.log(arr2)
+			console.log(arr3)
+			
+			// 3.检查是否为数组 instanceof
+			console.log(arr1 instanceof Array); //true
+			console.log('123' instanceof Array); //false
+			// 4.检查是否为数组  Array.isArray(参数)
+			// H5新增
+			console.log(Array.isArray(arr1));  //true 
+			console.log(Array.isArray('arr1'));  //true
+			
+			// 5.添加数组元素
+			var arr5 = [1, 2, 3];
+			// push()   数组后面 追加数组元素
+			arr5.push(4, 'pink');
+			console.log(arr5.push(4, 'pink')); //返回新数组长度
+			console.log(arr5); //返回新数组
+			// unshift() 数组前面 追加数组元素
+			arr5.unshift('red', 'purple')
+			console.log(arr5.unshift('red', 'purple'))
+			console.log(arr5)
+			
+			// 6.删除数组元素
+			// pop() 删除数组的最后一个元素
+			// pop() 没有参数
+			arr5.pop();
+			console.log(arr5.pop());
+			console.log(arr5)
+			// shift() 删除第一个元素
+			// shift() 没有参数
+			arr5.shift();
+			console.log(arr5.shift());
+			console.log(arr5)
+			
+			// 7.帅选数组 案例
+			var arr7 = [10, 20, 11.1, 12.6, 50, 60, 1, 5, 6]
+			var newArr = []
+			for ( var i = 0; i < arr7.length ; i++) {
+				if (arr7[i] > 11) {
+					newArr.push(arr7[i])
+				}
+			}
+			console.log(newArr)
+			
+			// 8.数组排序
+			// 8.1.翻转数组 reverse()
+			var arr81 = ['red', 'pink', 'hh', 12, 26 ];
+			arr81.reverse();
+			console.log(arr81);
+			
+			// 8.2. sort() 元素按照转换为的字符串的各个字符的Unicode位点进行排序 
+			var arr82 = [3, 17, 6, 35, 2, 82]
+			arr82.sort();
+			console.log(arr82); //[17, 2, 3, 35, 6, 82]
+			
+			// 8.3.升序
+			var arr83 = [3, 17, 6, 35, 2 , 83]
+			arr83.sort(function(a,b) {
+				return a - b;
+			} )
+			console.log(arr83)
+			
+			// 8.4.降序
+			var arr84 = [3, 17, 6, 35, 2 , 84]
+			arr84.sort(function(a,b) {
+				return b - a
+			} )
+			console.log(arr84)
+			
+			//9.数组索引
+			// 9.1.查看元素索引 indexOf(元素)，从前往后
+			var arr9 = ['red', 3,'hh', 17, 6, 'hh', 35, 2 , 9]
+			console.log(arr9.indexOf('hh')); //结果为2，只返回第一个元素的索引
+			console.log(arr9.indexOf('17')); //结果为-1，找不到元素返回-1
+			// 9.2.查看元素索引 lastIndexOf(元素)，从后往前
+			console.log(arr9.lastIndexOf('hh')); //结果为5，返回最后一个元素的索引
+			console.log(arr9.lastIndexOf('17')); //结果为-1，找不到元素返回-1
+			
+			// 10.数组去重
+			var arr10 = ['red', 3,'hh', 17, 6, 'hh', 35, 2 , 9, 17, 17]
+			function uniques(arr) {
+				var newarr10 = [];
+				for ( var i = 0; i < arr.length; i++) {
+					if (newarr10.indexOf(arr[i]) === -1 ) {
+						newarr10.push(arr[i]);
+					}	
+				}
+				return newarr10
+			}
+			console.log(uniques(arr10))
+			
+			// 11.数组转换成字符串
+			var arr11 = [1, 2, 3];
+			// 11.1 toString()
+			console.log(arr11.toString()); // 1,2,3
+			// 11.2 join(分隔符)
+			console.log(arr11.join('&')); // 1&2&3
+			
+			// 12.数组拼接
+			var arr121 = ['ss', 'ee', 'hh', 1.2, 121];
+			var arr122 = ['fd', 66, 88, 122];
+			var arr123 = ['gg', 45, 67, 123];
+			// 数组A.concat(数组B) 链接 两个或多个数组，生成 新数组C
+			// 不影响原数组
+			var arr124 = arr121.concat(arr122,arr123);
+			console.log(arr121);
+			console.log(arr122);
+			console.log(arr123);
+			console.log(arr124);
+			
+			// 13.数组截取
+			var arr131 = ['ss', 'ee', 'hh', 1.2, 36, '55', 'ew'];
+			// 数组A.slice(索引1,索引2) 
+			//截取范围 [索引1,索引2) ,不包含 索引2
+			//返回被截取项目的新数组
+			// 不影响原数组
+			var arr132 = arr131.slice(2); // ['hh', 1.2, 36, '55', 'ew']
+			console.log(arr131)
+			console.log(arr132)
+			var arr133 = arr131.slice(2,5); // ['hh', 1.2, 36]
+			console.log(arr131)
+			console.log(arr133)
+			var arr134 = arr131.slice(-2); // ['55', 'ew']
+			console.log(arr131)
+			console.log(arr134)
+			var arr135 = arr131.slice(2,-2); //  ['hh', 1.2, 36]
+			console.log(arr131)
+			console.log(arr135)
+			
+			
+			// 14.数组删除、新增
+			console.log('###############')
+			var arr141 = ['ss', 'ee', 'hh', 1.2, 36, '55', 'ew', 141];
+			// 数组A.splice(开始索引,要删除的元素个数,从开始索引处添加的元素1,元素2,元素n) 返回删除后的新数组
+			// 修改原数组
+			console.log(arr141)
+			var arr142 = arr141.splice(3,2)
+			console.log(arr141); // 删除后的新数组 ['ss', 'ee', 'hh', '55', 'ew', 141]
+			console.log(arr142); // 删除的数据 [1.2, 36]
+			
+			var arr143 = arr141.splice(3,2,'新增1','新增2')
+			console.log(arr141); // 删除、新增 后 的新数组 ['ss', 'ee', 'hh', '新增1', '新增2', 141]
+			console.log(arr143); // 删除的数据 ['55', 'ew']
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

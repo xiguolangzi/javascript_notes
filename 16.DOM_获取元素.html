@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取元素</title>
+	</head>
+	<body>
+		<div id="nav1">
+			2021-12-30
+		</div>
+		<ul >
+			<li>11</li>
+			<li>22</li>
+			<li>33</li>
+		</ul>
+		<div class="box">
+			盒子1
+		</div>
+		<div class="box">
+			盒子2
+		</div>
+		
+		<script type="text/javascript">
+			// 1. id 获取 
+			// getElementById('id名')
+			// 返回的是对象
+			var timer = document.getElementById('first1');
+			console.log(timer); //
+			console.log(typeof timer); //object
+			
+			// 2. console.dir() 打印我们返回的元素对应 
+			// 更好的查看方法和属性
+			console.dir(timer); 
+			
+			// 3. 通过标签名 获取元素
+			// getElementsByTagName('标签名') 
+			// 返回元素对象的集合
+			// 是伪数组
+			// 伪数组不可以作为父类元素
+			var lis = document.getElementsByTagName('li');
+			console.log(lis)
+			console.log(lis[0])
+			
+			// 4. class 获取
+			// getElementsByClassName('类名')
+			// 返回元素对象的集合
+			// 是伪数组
+			var box =  document.getElementsByClassName('box');
+			console.log(box);
+			
+			// 5. querySelector('') 
+			// 可以通过 id class 标签 进行获取元素
+			// 通过 id
+			var firstBox = document.querySelector('.box');
+			console.log(firstBox);
+			// 通过 class
+			var firstBox2 = document.querySelector('#nav1');
+			console.log(firstBox2)
+			// 通过标签
+			var li = document.querySelector('li');
+			console.log(li);
+			
+			// 6. querySelectorAll('')
+			// 获取所有元素
+			// 是伪数组
+			var allBox = document.querySelectorAll('.box');
+			console.log(allBox)
+			var allLis = document.querySelectorAll('li');
+			console.log(allLis)
+			
+			// 7. 获取 body 元素
+			var bodyEle = document.body;
+			console.log(bodyEle);
+			console.dir(bodyEle);
+			
+			// 8. 获取 html 元素
+			var htmlEle = document.documentElement;
+			console.log(htmlEle);
+			
+			
+			
+			  
+		</script>
+	</body>
+</html>

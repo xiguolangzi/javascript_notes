@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>date</title>
+		<script >
+		//Date 日期对象 是一个 构造函数，必须使用new来创建调用date对象
+		var date = new Date(); 
+		//如果没有系数返回当前系统的时间 年月日时分秒
+		console.log(date);
+		console.log(typeof date) //object
+		
+		//参数常用写法：
+		var date1 = new Date(2019,10,1) //结果为11月不是10月，这种有问题
+		console.log(date1)
+		
+		var date2 = new Date('2019-10-1 8:8:8')
+		console.log(date2)
+		
+		//错误写法
+		var date3 = Date;
+		console.log(typeof date3) //function
+		var date4 = Date();
+		console.log(typeof date4) //string
+		
+		//格式化日期 年月日
+		var date5 = new Date();
+		console.log(date5.getFullYear()) //返回当前日期的 年
+		console.log(date5.getMonth() + 1) //注意：返回的月份是0-11，所以返回的月份比实际小1
+										//记得+1啊
+		console.log(date5.getDate()) //返回的当前日期的 日
+		console.log(date5.getDay()) //周一为1 周六为6 周日为0
+		var year = date5.getFullYear();
+		var month = date5.getMonth() + 1;
+		var dates = date5.getDate();
+		var day = date5.getDay();
+		var arr = ['星期一','星期二','星期三','星期四','星期五','星期六','星期日'];
+		console.log('今天是 ' + year + ' 年 ' + month + ' 月 ' + dates +' 日 ' + ' ' + arr[day]);
+		
+		//格式化日期 时分秒
+		function getTimer() {
+			var time = new Date();
+			var h = time.getHours()
+			var m = time.getMinutes()
+			var s = time.getSeconds()
+			h = h < 10 ? '0' + h : h;
+			m = m < 10 ? '0' + m : m;
+			s = s < 10 ? '0' + s : s;
+			return h + ':' + m + ':' + s
+		}
+		console.log(getTimer())
+		
+		//时间戳：毫秒数累计
+		//起始时间：1970年1月1如(世界标准时间)
+		var sec =  new Date();
+		console.log(sec.valueOf()); //现在距1970.1.1的毫秒数
+		console.log(sec.getTime()); //现在距1970.1.1的毫秒数
+		var sec2 = +new Date(); 	//现在距1970.1.1的毫秒数
+		console.log(sec2)
+		//H5新增方法
+		console.log(Date.now());  	//现在距1970.1.1的毫秒数
+		
+		//倒计时
+		function conutDown(time) {
+			var nowTime =  +new Date(); 		//当前时间的时间戳
+			var inputTime = +new Date(time);	//输入时间的时间戳
+			var times = (inputTime - nowTime) / 1000; //毫秒转换成秒
+			console.log(typeof times) //number
+			//parseInt() 取整数
+			var d = parseInt(times / 60 / 60 / 24) 	//计算天
+			var h = parseInt(times / 60 / 60 % 24) 	//计算小时
+			var m = parseInt(times / 60 % 60) 		//计算分
+			var s = parseInt(times % 60 ) 			//计算当前秒
+			
+			d = d < 10 ? '0' + d : d;
+			h = h < 10 ? '0' + h : h;
+			m = m < 10 ? '0' + m : m;
+			s = s < 10 ? '0' + s : s;
+			
+			var res66 = '倒计时' + d + '天' + h + '小时' + m + '分' + s + '秒';
+			return res66
+		}
+		
+		function timeDriver(time) {
+			var nowTime =  +new Date(); 		//当前时间的时间戳
+			var inputTime = +new Date(time);	//输入时间的时间戳
+			var times = (inputTime - nowTime)
+			console.log(typeof times)
+			if (times > 0) {
+				console.log(conutDown(time));
+			}else if (times == 0) {
+				console.log('时间到！');
+			}else{
+				console.log('游戏结束');
+			}
+			
+			
+		}
+		
+		var res6 = timeDriver('2021-12-30 16:27:02')
+	
+		
+		
+		
+		
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

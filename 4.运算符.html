@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>运算符</title>
+		<script >
+			//1.算数运算符：+-*/%
+			console.log(1 + 2);
+			console.log(1 - 2);
+			console.log(1 * 2);
+			console.log(1 / 2);
+			console.log(4 % 2); //取余0，判断是否可以整除
+			console.log(5 % 2); //取余1
+			//注意浮点数！不可以直接用浮点数进行计算！
+			console.log(0.1 + 0.2); //浮点数会特别！结果为0.3000000004
+			console.log(0.07 * 100); //结果为7.0000000001
+			var num = 0.1 + 0.2 ;
+			console.log(num == 0.3); //结果为false
+			
+			//2.表达式和返回值
+			var num2 = 1 + 4; //计算右边的表达式 把返回值给左边num2
+			
+			//3.递增和递减运算符 ++ --,前后置独立计算结果一直，与其他代码连用结果不同；
+			//变量自加1
+			var num3 = 1;
+			num3 = num3 + 1;
+			//前置:先'加减'再返回值再计算
+			var age = 10;
+			++age;
+			console.log(age);
+			var a = ++age + 2;
+			console.log('age = 11 前置计算++age + 2为'+':'+a);
+			--age;
+			console.log(age);
+			//后置:先返回值在计算 再'加减''
+			var age1 = 10;
+			age1++;
+			console.log(age1);
+			var b = age1++ + 2  ; 
+			console.log('age1 = 11 后置计算age1++ + 2为'+':'+b);
+			age1--;
+			console.log(age1);
+			//前后置解读
+			var e = 10;
+			var f = e++ + ++e; //e++ = 10 然后返回e = 11 ,++e = 12 ,所有10 + 12 =22
+			console.log(f); // 结果为22
+			//开发中使用后置，且单独一行
+			num2++;
+			
+			//3.比较运算符，< > >= <= == != === !==
+			console.log(3 >= 5); //结果为false
+			console.log(3 <= '5'); //结果为true
+			console.log('胡老师' == '胡老师'); //结果为true
+			//==等号默认转换数字类型
+			console.log(18 == '18'); //结果为true
+			//全等，要求两侧的值和数字类型完全相等
+			console.log(18 === '18'); //结果为false
+			
+			//4.逻辑运算符 &&与 ||或 ！非
+			//逻辑中断与
+			//表达式1 && 表达式2 ，如果表达式1位真，则返回表达式2；如果表达式1为假，则返回表达式1
+			console.log(123 && 456) //结果为456
+			console.log(0 && 456) //结果为0
+			//逻辑中断或
+			//表达式1 || 表达式2 ，如果表达式1位真，则返回表达式1；如果表达式1为假，则返回表达式2
+			console.log(123 || 456) //结果为123
+			console.log(0 || 456) //结果为456
+			console.log(123 || 456 || 789 + 10) //结果为123
+			console.log(0 || 456 || 789 + 10) //结果为456
+			
+			//5.赋值运算符 =  += -= *= /= %=
+			var num5 = 10;
+			num5 = num5 + 2;
+			num5 += 2;
+			console.log(num5);
+			
+			//6.运算符的顺序
+			// 1.()
+			// 2.++ -- !
+			// 3.先*/%后+-
+			// 4.> >= < <=
+			// 5.== != === !==
+			// 6.先&& 后||
+			// 7.=
+			// 8.,
+			
+			
+			
+			
+			
+			
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

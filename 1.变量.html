@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>变量</title>
+		<script type="text/javascript">
+			// 1.声明变量 var
+			var age;
+			
+			// 2.赋值变量
+			age = 10;
+			console.log(age)
+			
+			// 3.变量的初始化，name是关键字不要使用
+			var myname = '卡卡西';
+			var address = '火影村';
+			var gz = 2000;
+			console.log(myname);
+			console.log(address);
+			console.log(gz);
+						
+			// 4.案例
+			// 输入 存储
+			var myname2 = prompt('请输入你的名字');
+			//输出变量
+			alert(myname2);
+			
+			//5.语法扩展
+			//更新变量
+			var myname3 = '鸣人';
+			console.log(myname3);
+			myname3 = '佐助';
+			console.log(myname3);
+			//声明多个变量
+			var age1 = 18 , address1 = '雷影村';
+			console.log(age1);
+			console.log(address1);
+			//声明不赋值，打印结果为undefined
+			var sex
+			console.log(sex)
+			//没有声明的变量，会报错 tel is not defined
+			// console.log(tell)
+			//不声明直接赋值可以使用
+			juan = 66;
+			console.log(juan);
+			
+			//6.变量命名规范：大小写字母、数字、下滑线、$
+			//不能用关键字：var name 等
+			//不能以数字开头，区分大小写
+			//开头小写，后面首字母大写
+			
+			//7.变量交换
+			var temp;
+			var apple1 = '青苹果';
+			var apple2 = '红苹果';
+			temp = apple1;
+			apple1 = apple2;
+			apple2 = temp;
+			console.log(apple1);
+			console.log(apple2);
+			
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

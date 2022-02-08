@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>流程分支</title>
+		<script type="text/javascript">
+			//1.顺序结构：script本身就是顺序结构
+			
+			//2.分支结构：
+			//if语句
+			var grades = prompt('请输入学生成绩');
+			if (grades >= 90) {
+				console.log("优秀")
+			}else if (grades >= 80){
+				console.log("良好")
+			}else if (grades >= 60){
+				console.log("及格")
+			}else{
+				console.log("不及格")
+			}
+			
+			//三元表达式：条件表达式？表达式1 : 表达式2
+			//如果如果条件为真，返回结果为表达式1的值，如果条件为假，返回结果为表达式2的值
+			var num = 10;
+			var res = num > 5 ? '是的' : '不是';
+			console.log(res)
+			var times = prompt('请输出一个0 - 59的数字');
+			var res1 = times < 10 ? '0' + times : times
+			console.log(res1)
+			
+			//switch语句，针对确定值,case 条件匹配是全等！
+			var a = prompt('请输出一个东西，看看是什么！')
+			switch(a){
+				case 1 :
+				console.log('这是1');
+				break;
+				
+				case '1' :
+				console.log('这是"1"');
+				break;
+				
+				case '花菜' :
+				console.log('这是蔬菜');
+				break;
+				
+				case true :
+				console.log('is true');
+				break;
+				
+				default:
+				console.log('我也不知道是什么')
+				
+			}
+			
+			
+			//3.循环结构：
+			//for循序：
+			var b = prompt('输入年纪，判断他的身体状态')
+			for (var i = 1; i <= b; i++) {
+				if (i >= 100){
+					console.log('长命百岁')
+				}else if (i >= 60){
+					console.log('老年人')
+				}else if (i >= 30){
+					console.log('年轻人')
+				}else{
+					console.log('孩子')
+				}
+			}
+			//先执行 var i = 1;
+			//再执行 i <= 100;
+			//接着执行 console.log('你好吗？');
+			//最后执行 i++
+			//断点：F12 进入到控制平台 source 
+			var num6 = prompt('输入打印星星的行数');
+			var num66 = prompt('输入打印星星的列数');
+			var str1 = ''; 
+			for (var i = 1; i <= num6; i++) {
+				
+				for (var j = 1; j <= num66; j++){					
+					str1 = str1 + '☆';
+				}
+				str1 = str1 + '\n'
+				
+			}
+			console.log(str1);
+			
+			//while循环：
+			var num8 = 1;
+			while (num8 <= 100) {
+				console.log('今年岁'+num8+'了');
+				num8++;
+			}
+			
+			
+			//do while 循环:
+			var sumNum = prompt("输入一个数，计算该1到该数的整数和")
+			var sum = 0;
+			var p = 1;
+			do {
+				sum += p ;
+				p++;
+			} while (p <= sumNum)
+			console.log(sum)
+			
+			//4.break continue
+			//continue退出当前此循环，继续重新循环
+			for (var i = 1; i <=5 ; i++) {
+				if (i == 3) {
+					continue; //结束后面的语句，从新循环
+				}
+				console.log('我吃了第' + i + '个包子')
+			}
+			//break结束所有循环
+			
+			
+			//书写规范：空格隔开，小括号与花括号也要空格隔开
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

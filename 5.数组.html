@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数组</title>
+		<script type="text/javascript">
+			//创建数组
+			//1.通过 new 创建
+			var arr = new Array(); //创建一个空的数组
+			//2.通过 字面量 创建
+			var arr1 = []; //创建一个空的数组
+			var arr2 = [1,2,'haha',true,1.23] //创建并赋值
+			console.log(arr2)
+			
+			//获取数组数据
+			console.log(arr2[2])
+			
+			//遍历数组
+			console.log('***********')
+			var len = arr2.length
+			for ( var i = 0; i < len ; i++) {
+				console.log(arr2[i])
+			}
+			
+			//数组转化为字符串
+			console.log('***********')
+			var len = arr2.length
+			var str = ''
+			for ( var i = 0; i < len ; i++) {
+				str += arr2[i] + '!'
+			}
+			console.log(str)
+			
+			//数组新增元素
+			//通过length
+			arr2.length = 10;
+			console.log(arr2);
+			arr2[6] = '嘻嘻';
+			console.log(arr2);
+			//追加
+			arr2[15] = 'lala';
+			console.log(arr2);
+			//如果索引号存在，替换元素
+			arr2[0] = '替换';
+			console.log(arr2);
+			
+			//筛选数组
+			var arr3 = [2, 0, 6, 1, 77, 0, 52, 48, 3, 9, 10]
+			var newArr = [];
+			for ( var i = 0; i <= arr3.length ; i++) {
+				if (arr3[i] > 10) {
+					newArr[newArr.length] = arr3[i];
+				}
+			}
+			console.log(newArr)
+			
+			//删除数组中的元素
+			//也是通过筛选数组的方法进行处理！
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
