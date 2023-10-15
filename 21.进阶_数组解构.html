@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.数组解构 赋值 : 将数组单元值 快速的 赋值给变量
+        const arr1 = [100,60,80]
+        const [max,min,avg] = arr1
+        console.log(max)
+        console.log(min)
+        console.log(avg)
+
+        // 2.利用数组解构 进行 数组交换
+        const a = 1
+        const b = 2
+        ;[b,a] = [a,b]  //必须加";"号，否则 认为"2 [b,a]"为没有声明的变量，会报错
+        console(a)  //结果为2
+        console(b)  //结果为1
+
+        // 3.什么时候加分号 ";"
+        // 3.1 立即执行函数
+        (function(){})();
+        // 3.2使用数组的时候
+        const str = 'pink'
+        [1,2,3].map(
+            function(item){
+                console.log(item)
+            }
+        )
+
+
+
+    </script>
+</body>
+</html>

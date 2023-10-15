@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.函数提升
+        f()
+        function f(){
+            console.log("函数提升到作用域之前，值提升声明，不提升值")
+        }
+        // 2.函数参数 - 动态参数 arguments 伪数组
+        function getSum(){
+            consolelog(arguments)
+        }
+        getSum(1,2,3,4,5)
+
+        // 3.函数参数 - 剩余参数 other 真数组
+        function getSum(a,b, ...other){
+            consolelog(other) //other 的值为第三个之后的所有参数 [3，4，5];
+        }
+        getSum(1,2,3,4,5)
+
+        //4.其中 “...other === 3,4,5”
+        const arr1 = [1,2,3]
+        const arr2 = [4,5,6]
+        const arr3 = [...arr1,...arr2]
+        console.log(arr3) //结果为[1,2,3,4,5,6]
+
+        //5.箭头函数:基本语法
+        const fn = (a) => {
+            console.log(a)
+        }
+        fn()
+
+        //6.箭头函数 ：只有一个参数可以省略小括号，只有一行代码可以省略花括号
+        const fm = x => x+400
+
+        //7.箭头函数返回对象 :为了区别对象和函数花括号 用小括号区别
+        const fl = (uname) => ({name:uname})
+
+        //8.箭头函数求和
+        const getSum2 = (...arr6) => {
+            let sum = 0
+            for (i = 0;i<=arr6.length;i++){
+                sum += arr[i]
+            }
+            return sum
+        }
+        getSum2(2,3,4)
+
+
+    </script>
+</body>
+</html>

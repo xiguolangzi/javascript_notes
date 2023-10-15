@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作用域</title>
+	</head>
+	<body>
+
+		<script>
+			// 1.局部作用域：函数之间不可访问
+			// 2.块作用域 let const：{}包裹的都是块作用域
+			for(let i = 1; i <= 3 ;i++ ){
+				console.log(i)
+			}
+			// 3.全局作用域：.js文件、<scrip>标签
+			// 4.作用域链：优先查找当前的作用域，如果没有逐级向上查找
+			// 注意：自己可以向上查找父级作用域，但是父级不能查找子集作用域
+			function f(){
+				let a = 1
+				function g(){
+					a = 2
+					console.log(a)
+				}
+			}
+			f()
+
+			// 5.垃圾回收机制：内存分配、使用、回收
+			// 注意：局部变量之间的相互引用 会导致栈内存放数据不会释放，导致内存泄漏
+
+			// 6.闭包 ：内层函数 + 外层函数的变量 容易内存泄漏
+			function outer(){
+				const a = 1
+				function f(){
+					console.log(a)
+				}
+				return f
+			}
+			outer()
+
+			// 7.变量提升
+			// var 与 let/const  声明变量的区别，var只将声明提升到当前作用域的最前面
+			console.log(str + "world") //输出结果为undifind
+			var str = "helo" //如果用let声明，上面的雨具会因没有声明的变量而报错
+
+			 
+
+		</script>
+	</body>
+</html>
