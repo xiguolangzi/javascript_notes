@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 浏览器与服务器之间的通信</title>
+</head>
+<body>
+    <!-- 0.添加一个标签 -->
+    <p class="my-p"></p>
+
+    <!-- 1.引入axios库 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // 2.使用axios函数
+        axios({
+            url:'http://hmajax.itheima.net/api/province' //服务器资源获取的链接
+        }).then(
+            result =>{  //回调函数
+                console.log(result)
+                console.log(result.data.list)
+                // 3.字符串拼接 join
+                console.log(result.data.list.join('<br>'))
+                // 4.将获取的省份插入到P标签
+                document.querySelector('.my-p').innerHTML = result.data.list.join('<br>')
+            }
+        )
+
+    </script>
+    
+</body>
+</html>
